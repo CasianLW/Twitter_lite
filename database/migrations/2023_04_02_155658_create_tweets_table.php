@@ -15,7 +15,7 @@ return new class extends Migration
             
         $table->id();
         $table->unsignedBigInteger('user_id');
-        $table->text('content', 180);
+        $table->text('message', 180);
         $table->timestamps();
         });
     }
