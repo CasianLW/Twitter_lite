@@ -41,13 +41,13 @@ class TweetPolicy
 
     }
 
-    // /**
-    //  * Determine whether the user can delete the model.
-    //  */
-    // public function delete(User $user, Tweet $tweet): bool
-    // {
-    //     //
-    // }
+    /**
+     * Determine whether the user can delete the model.
+     */
+    public function delete(User $user, Tweet $tweet): bool
+    {
+        return $this->update($user, $tweet);
+    }
 
     // /**
     //  * Determine whether the user can restore the model.
