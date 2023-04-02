@@ -40,6 +40,13 @@
                                         <x-dropdown-link :href="route('tweets.edit', $tweet)">
                                             {{ __('Edit') }}
                                         </x-dropdown-link>
+                                        <form method="POST" action="{{ route('tweets.destroy', $tweet) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <x-dropdown-link :href="route('tweets.destroy', $tweet)" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                {{ __('Delete') }}
+                                            </x-dropdown-link>
+                                        </form>
                                     </x-slot>
                                 </x-dropdown>
                             @endif
