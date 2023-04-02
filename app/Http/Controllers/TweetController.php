@@ -55,15 +55,27 @@ class TweetController extends Controller
      */
     public function edit(Tweet $tweet)
     {
-        //
+        $this->authorize('update', $tweet);
+ 
+        return view('tweets.edit', [
+            'tweet' => $tweet,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tweet $tweet)
+    public function update(Request $request, Tweet $tweet): RedirectResponse
     {
-        //
+        $this->authorize('update', $tweet);
+ 
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+ 
+        $tweet->update($validated);
+ 
+        return redirect(route('tweets.index'));
     }
 
     /**
