@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('tweets', TweetController::class)
-    ->only(['index', 'store','edit','update'])
+    ->only(['index', 'store','edit','update','destroy'])
     ->middleware(['auth', 'verified']);
 
 
