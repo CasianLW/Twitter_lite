@@ -18,9 +18,12 @@
                     </svg>
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-gray-800">{{ $tweet->user->name }}</span>
-                                <small class="ml-2 text-sm text-gray-600">{{ $tweet->created_at->format('j M Y, g:i a') }}</small>
+                            <div class="justify-between flex w-full">
+                                <div>
+                                    <span class="text-gray-800">{{ $tweet->user->name }}</span>
+                                    <small class="ml-2 text-sm text-gray-600">{{ $tweet->created_at->format('j M Y, g:i a') }}</small>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600"> {{ $tweet->created_at->diffForHumans() }}</span>
                             </div>
                         </div>
                         <p class="mt-4 text-lg text-gray-900">{{ $tweet->message }}</p>
