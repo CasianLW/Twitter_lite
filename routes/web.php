@@ -27,6 +27,10 @@ Route::resource('tweets', TweetController::class)
     ->only(['index', 'store','edit','update','destroy'])
     ->middleware(['auth', 'verified']);
 
+    Route::get('/tweets/{user_id}', [TweetController::class, 'userTweets'])
+    ->middleware(['auth', 'verified'])
+    ->name('tweets.user');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
