@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Tweet;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -49,6 +50,17 @@ class TweetController extends Controller
     {
         //
     }
+
+    public function userTweets(int $user_id): View
+{
+    $user = User::findOrFail($user_id);
+    $tweets = $user->tweets()->latest()->get();
+
+    return view('tweets.user', [
+        'user' => $user,
+        'tweets' => $tweets,
+    ]);
+}
 
     /**
      * Show the form for editing the specified resource.
