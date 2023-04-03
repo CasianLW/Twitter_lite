@@ -22,7 +22,10 @@
                         <div class="flex justify-between items-center">
                             <div class="justify-between flex w-full">
                                 <div>
-                                    <span class="text-gray-800">{{ $tweet->user->name }}</span>
+                                    {{--<span class="text-gray-800">{{ $tweet->user->name }}</span>--}}
+                                    <a href="{{ route('tweets.user', $tweet->user->id) }}" class="text-blue-600 hover:text-blue-800">
+                                    {{ $tweet->user->name }}
+                                </a>
                                     <small class="ml-2 text-sm text-gray-600">{{ $tweet->created_at->format('j M Y, g:i a') }}</small>
                                 </div>
                                 <span class="ml-2 text-sm text-gray-600"> {{ $tweet->created_at->diffForHumans() }}</span>
