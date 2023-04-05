@@ -55,4 +55,5 @@
             </x-primary-button>
         </div>
     </form>
+    <a href="{{ route('home') }}" class="ml-4 mt-3 ">Back to home</a>
 </x-guest-layout>
