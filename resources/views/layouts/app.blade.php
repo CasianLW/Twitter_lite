@@ -14,8 +14,11 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+    <body class="backdrop-blur-3xl font-sans antialiased  bg-[url('https://images.unsplash.com/photo-1605557202138-097824c36ed2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=752&q=80')]">
+    <div class=" fixed h-[100vh] w-full -z-10 backdrop-blur-3xl rounded-b-3xl" style="background-attachment: fixed;"></div>
+
+        
+        <div class="min-h-screen bg-transparent">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
