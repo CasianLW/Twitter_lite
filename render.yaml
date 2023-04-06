@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: laravel-breeze-app
+    env: docker
+    buildCommand: "docker build -t laravel-breeze-app ."
+    startCommand: "docker run -p 8080:80 --log-driver json-file laravel-breeze-app"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: base64:xL42zCmPgIDK69zKZyCOKsqCbVDqgpqp6Z+dhmqpZPs=
+      - key: APP_DEBUG
+        value: "true"
+      - key: APP_URL
+        value: https://twitter-lite.onrender.com/
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-cg5i3dkeoogsv97aenog-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: dev_db_w2y0
+      - key: DB_USERNAME
+        value: dev_db_w2y0_user
+      - key: DB_PASSWORD
+        value: HxNGFI06csOYe6DLlfuXqQ3CgRVd6XzZ
+      - key: LOG_CHANNEL
+        value: stack
+      - key: LOG_LEVEL
+        value: debug
+      - key: LOG_DEPRECATIONS_CHANNEL
+        value: null
+
+databases:
+  - name: twitter
+    engine: postgres
+    version: "15"
+    username: dev_db_w2y0_user
+    password: HxNGFI06csOYe6DLlfuXqQ3CgRVd6XzZ
+    port: 5432
+    database: dev_db_w2y0
